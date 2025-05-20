@@ -1,0 +1,176 @@
+.fx {
+    display: flex;
+}
+
+.fx_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fx_item_center {
+    display: flex;
+    align-items: center;
+}
+
+.fx_btwn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fx_btwn_center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fx_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fx_col_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fx_item_start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.fx_item_end {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* OTHER CSS */
+
+.separator {
+    height: 1px;
+    background-color: #1E3A8A;
+}
+
+/* BUTTONS */
+
+.register_btn {
+    background-color: #1E3A8A;
+    color: #fff;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: .625rem;
+    padding: .625rem;
+    border-radius: .15rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+
+.login_btn {
+    background-color: transparent;
+    color: #1E3A8A;
+    border: 1px solid #10B981;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: .625rem;
+    padding: .625rem;
+    border-radius: .15rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+
+.go_back_btn{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid #1E3A8A;
+    padding: .625rem;
+}
+
+.primary_btn{
+    background-color: #1E40AF;
+    color: #fff;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: .625rem;
+    padding: .625rem 2rem;
+    border-radius: .15rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+/* AUTH */
+
+.auth_option_main_card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    border-radius: .15rem;
+    padding: 1.5rem;
+}
+
+.auth_option_card {
+    width: 25rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 1;
+    background: linear-gradient(135deg, #105880 0%, #1D4ED8 50%, #93C5FD 100%);
+    border-radius: 0.15rem;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.auth_option_card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+
+.auth_option_card_text {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.auth_option_header {
+    color: #111827;
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.4375rem;
+}
+
+.auth_option_sub_header {
+    color: #6B7280;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
