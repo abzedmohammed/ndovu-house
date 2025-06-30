@@ -54,6 +54,10 @@
 
 /* BUTTONS */
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 .register_btn {
     background-color: #1E3A8A;
     color: #fff;
@@ -85,7 +89,7 @@
     line-height: 1.25rem;
 }
 
-.go_back_btn{
+.go_back_btn {
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -96,20 +100,111 @@
     padding: .625rem;
 }
 
-.primary_btn{
-    background-color: #1E40AF;
+.primary_btn {
+    background: linear-gradient(135deg,
+            rgba(30, 58, 138, 0.9) 0%,
+            rgba(15, 23, 42, 0.9) 55%,
+            rgba(0, 0, 0, 0.95) 100%);
     color: #fff;
     display: flex;
     justify-items: center;
     align-items: center;
-    gap: .625rem;
-    padding: .625rem 2rem;
-    border-radius: .15rem;
+    gap: 0.625rem;
+    padding: 0.625rem 2rem;
+    border-radius: 0.15rem;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.25rem;
+    transition: all 0.3s ease;
+    /* Ensure smooth effect */
+    border: none;
+    cursor: pointer;
 }
+
+.primary_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+}
+
+.secondary_btn {
+    width: fit-content;
+    position: relative;
+    background: transparent;
+    color: #1e3a8a;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 2rem;
+    border-radius: 0.15rem;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary_btn::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 2px;
+    border-radius: 0.15rem;
+    background: linear-gradient(135deg,
+            rgba(30, 58, 138, 0.9) 0%,
+            rgba(15, 23, 42, 0.9) 55%,
+            rgba(0, 0, 0, 0.95) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.secondary_btn:hover {
+    opacity: 0.85;
+}
+
+
+/* INPUT */
+
+.otp_input {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5.75rem;
+    padding: 0.6875rem 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 0.25rem;
+    border: 1px solid #d1c3c3;
+    background: white;
+    box-shadow: none;
+    outline: none;
+    font-size: 1.9rem;
+    color: var(--CD-N-10, #0E0E0E);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    /* 150% */
+}
+
+
+/* NOTIFICATIONS */
+
+.toast_bar {
+    min-height: 3.5rem;
+    height: auto;
+    padding: 1.5rem;
+    background: #fff;
+}
+
 
 /* AUTH */
 

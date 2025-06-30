@@ -1,5 +1,5 @@
 import { DatePicker, Form } from 'antd';
-import { datePickerSvg } from '../componets/svgs';
+import { datePickerSvg } from '../svgs';
 
 export default function FormInputDatePicker({
 	label,
@@ -12,6 +12,7 @@ export default function FormInputDatePicker({
 	picker = 'date',
 	format = 'DD/MM/YYYY',
 	suffixIcon = datePickerSvg,
+	maxDate,
 }) {
 	return (
 		<Form.Item
@@ -25,6 +26,7 @@ export default function FormInputDatePicker({
 			className={className}
 			label={label}>
 			<DatePicker
+				maxDate={maxDate}
 				suffixIcon={suffixIcon}
 				readOnly={readOnly}
 				placeholder={placeholder}

@@ -3,7 +3,6 @@ import useToggle from '../custom_hooks/useToggle';
 import useAuthCheck from '../custom_hooks/useAuthCheck';
 import MainNavbar from '../componets/navigation/MainNavbar';
 import UserAvatarNavLink from '../componets/navigation/UserAvatarNavLink';
-import SubNavbar from '../componets/navigation/SubNavbar';
 import SideNavOpen from '../componets/navigation/SideNavOpen';
 import SideBarClose from '../componets/navigation/SideBarClose';
 import PageHeaderTitle from '../componets/navigation/PageHeaderTitle';
@@ -17,7 +16,6 @@ export default function MainLayout() {
 		<>
 			<nav className='sticky top-0 z-[1000]'>
 				<MainNavbar component={<UserAvatarNavLink />} />
-				<SubNavbar />
 			</nav>
 			<div className='w-full h-full px-[5.81rem] pt-[2.25rem] pb-[5.25rem]'>
 				<div className='fx items-start relative'>

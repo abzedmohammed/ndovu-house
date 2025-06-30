@@ -6,22 +6,7 @@ export const successNotification = (toastObj) => {
 		(t) => (
 			<div key={t.id} className='toast_bar border-2 border-[#08C552]'>
 				<div className='fx gap-[1.5rem] items-start'>
-					<div className='toast_box bg-[#D4EDDA]'>
-						<div className='toast_box_content'>
-							<img src={"toast_success"} alt='toast_success' />
-						</div>
-					</div>
-					<div className='fx_col'>
-						<span className='toast_header_text text-[#46A75D]'>
-						{toastObj?.title || 'Success'}
-						</span>
-						<span className='toast_header_subtext'>
-						{toastObj?.message || 'Operation completed successfully.'}
-						</span>
-					</div>
-					<div className='toast_close_box flex ml-auto'>
-						<img src={"toast_close"} alt='toast_close' />
-					</div>
+					{toastObj?.message || 'Operation completed successfully.'}
 				</div>
 			</div>
 		),
@@ -35,27 +20,7 @@ export const errorNotification = (toastObj) => {
 	toast.custom(
 		(t) => (
 			<div key={t.id} className='toast_bar border-2 border-[#EE1D52]'>
-				<div className='fx gap-[1.5rem] items-start'>
-					<div className='toast_box bg-[#EDB2B2]'>
-						<div className='toast_box_content'>
-							<img src={"toast_error"} alt='toast_error' />
-						</div>
-					</div>
-					<div className='fx_col'>
-						<span className='toast_header_text text-[#C00]'>
-							{toastObj?.title || 'Error!'}
-						</span>
-						<span className='toast_header_subtext'>
-							{toastObj?.message || 'An error occurred.'}
-						</span>
-					</div>
-					<button
-						type='button'
-						onClick={() => toast.dismiss(t.id)}
-						className='toast_close_box flex ml-auto'>
-						<img src={"toast_close"} alt='toast_close' />
-					</button>
-				</div>
+				{toastObj?.message || 'Operation completed successfully.'}
 			</div>
 		),
 		{
@@ -71,7 +36,7 @@ export const infoNotification = (toastObj) => {
 				<div className='fx gap-[1.5rem] items-start'>
 					<div className='toast_box bg-[#E8F8FF]'>
 						<div className='toast_box_content'>
-						<InfoCircleOutlined className='!text-[#0296DA] !text-[2rem]' />
+							<InfoCircleOutlined className='!text-[#0296DA] !text-[2rem]' />
 						</div>
 					</div>
 					<div className='fx_col'>
@@ -79,14 +44,15 @@ export const infoNotification = (toastObj) => {
 							{toastObj?.title || 'Info'}
 						</span>
 						<span className='toast_header_subtext'>
-							{toastObj?.message || 'Check all details before proceeding.'}
+							{toastObj?.message ||
+								'Check all details before proceeding.'}
 						</span>
 					</div>
 					<button
 						type='button'
 						onClick={() => toast.dismiss(t.id)}
 						className='toast_close_box flex ml-auto'>
-						<img src={"toast_close"} alt='toast_close' />
+						<img src={'toast_close'} alt='toast_close' />
 					</button>
 				</div>
 			</div>
@@ -102,7 +68,7 @@ export const licenseCheckNotification = () => {
 		<div key={t.id} className='toast_bar border-2 border-[#0071FF]'>
 			<div className='fx gap-[1.5rem] items-start'>
 				<div className='toast_box_scan fx flex-shrink-0'>
-					<img src={"fingerprint"} alt='fingerprint' />
+					<img src={'fingerprint'} alt='fingerprint' />
 				</div>
 				<div className='fx_col'>
 					<span className='toast_header_subtext'>

@@ -5,12 +5,13 @@ export default function NormalInputRadioGroup({
     value,
 	onChange,
 	options = [],
-	disabled
+	disabled,
+	className
 }) {
 	return (
 		<div className='fx_col gap-[.5rem] w-full'>
             <label>{label}</label>
-            <Radio.Group disabled={disabled} onChange={e => onChange(e.target.value)} value={value} options={options} />
+            <Radio.Group className={className} disabled={disabled} onChange={e => onChange(e.target.value)} value={value} options={options} />
 		</div>
 	);
 }

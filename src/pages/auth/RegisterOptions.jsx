@@ -1,7 +1,7 @@
 import { UserOutlined, HomeFilled, BankOutlined } from '@ant-design/icons';
-import AuthOptionCard from '../pages_components/auth/AuthOptionCard';
-import GoBackbtn from '../componets/buttons/GoBackbtn';
-import AuthHeader from '../pages_components/auth/AuthHeader';
+import AuthOptionCard from '../../pages_components/auth/AuthOptionCard';
+import GoBackBtn from '../../componets/buttons/GoBackBtn';
+import AuthHeader from '../../pages_components/auth/AuthHeader';
 
 const options = [
 	{
@@ -25,7 +25,7 @@ export default function RegisterOptions() {
 	return (
 		<>
 			<div className='w-full px-[5rem] pt-[3rem]'>
-				<GoBackbtn />
+				<GoBackBtn />
 			</div>
 			<div className='w-full h-full fx_center'>
 				<div className='auth_option_main_card'>

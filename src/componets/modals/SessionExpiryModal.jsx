@@ -3,14 +3,17 @@ import { useDispatch } from 'react-redux';
 import { Modal } from 'antd';
 import { handleLogout } from '../../features/auth/authSlice';
 
-export default function SessionExpiryModal({ open }) {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+let isActive = true;
 
-    function handleSessionExpired() {
-        dispatch(handleLogout());
-        navigate('/auth/login');
-    }
+export default function SessionExpiryModal({ open }) {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	function handleSessionExpired() {
+		if (isActive) return;
+		dispatch(handleLogout());
+		navigate('/auth/login');
+	}
 
 	return (
 		<>
@@ -28,7 +31,7 @@ export default function SessionExpiryModal({ open }) {
 						onClick={handleSessionExpired}
 						type='button'
 						className='fx flex-shrink-0'>
-						<img src={"close_white"} alt='close' />
+						<img src={'close_white'} alt='close' />
 					</button>
 				</div>
 
@@ -36,13 +39,11 @@ export default function SessionExpiryModal({ open }) {
 					<h2 className='home_feature_card_title'>
 						User session expired
 					</h2>
-					<p className='mt-[1.25rem]'>
-						You have been logged out
-					</p>
+					<p className='mt-[1.25rem]'>You have been logged out</p>
 
 					<div className='w-full fx justify-end mt-[1.62rem] gap-[.88rem]'>
-                        <button
-                            onClick={handleSessionExpired}
+						<button
+							onClick={handleSessionExpired}
 							className='primary_modal_submit_btn'
 							type='button'>
 							Login

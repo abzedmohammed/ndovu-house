@@ -3,7 +3,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags'
 import { useState } from 'react';
-import select_arrow_fat from '../assets/svg/select_arrow_fat.svg';
+import { selectArrowSvg } from '../svgs';
 
 
 export default function FormInputPhone({
@@ -11,6 +11,7 @@ export default function FormInputPhone({
 	inputName,
 	className,
 	required = true,
+	inputClassName
 }) {
 	const [value, setValue] = useState('');
 
@@ -26,6 +27,7 @@ export default function FormInputPhone({
 			name={inputName}
 			label={label}>
 			<PhoneInput
+				className={inputClassName}
 				international
                 flags={flags}
 				defaultCountry='KE'
@@ -33,7 +35,7 @@ export default function FormInputPhone({
 				onChange={setValue}
 				placeholder='Enter phone number'
 				countrySelectProps={{
-					arrowComponent: () => <img src={select_arrow_fat} alt="select_arrow" />,
+					arrowComponent: () => selectArrowSvg,
 				  }}
 			/>
 		</Form.Item>

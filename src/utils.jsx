@@ -2,6 +2,35 @@ import { Spin } from 'antd';
 
 export const url = import.meta.env.VITE_API_URL;
 
+export const defaultDropdownOverlayStyle = {
+	width: 'fit-content',
+	borderRadius: '1rem',
+	background: '#FFF',
+	boxShadow: 'none',
+};
+
+export const purpleDropdownOverlayStyle = {
+	width: '7.875rem',
+	height: 'fit-content',
+	borderRadius: '1rem',
+	backgroundColor: '#DBE1EE',
+};
+
+export const transparentDropdownOverlayStyle = {
+	width: 'fit-content',
+	borderRadius: '1rem',
+	background: 'transparent',
+	boxShadow: 'none',
+	border: 'none',
+};
+
+const today = new Date();
+let dd = String(today.getDate()).padStart(2, 0);
+let mm = String(today.getMonth() + 1).padStart(2, 0);
+let yyyy = today.getFullYear() - 18;
+
+export const minDateOfBirth = `${yyyy}-${mm}-${dd}`;
+
 export const isLoading = (processing, text, className = '') => {
 	if (processing) return <Spin className={className} />;
 	return text;
@@ -71,4 +100,38 @@ export const formatTime = (timeString) => {
 		return timeString.slice(0, 5);
 	}
 	return timeString;
+};
+
+export const formatImgPath = (path) => {
+	if (!path || typeof path === 'object') return path;
+
+	const domain = '102.217.125.162:2000';
+
+	return path.startsWith('./')
+		? `http://${domain}${path.replace('./', '/')}`
+		: path;
+};
+
+export const removePlusFromPhone = (phone = '') => {
+	if (typeof phone !== 'string') return phone;
+	return phone?.startsWith('+') ? phone.slice(1) : phone;
+};
+
+export const formatPhone = (phone = '') => {
+	if (typeof phone !== 'string') return phone;
+	return phone?.startsWith('254') ? '0' + phone.slice(3) : phone;
+};
+
+export const formatFileSize = (bytes) => {
+	if (bytes === 0) return '0 Bytes';
+	const kb = 1024;
+	const mb = kb * 1024;
+
+	if (bytes >= mb) {
+		return `${(bytes / mb).toFixed(2)} MB`;
+	} else if (bytes >= kb) {
+		return `${(bytes / kb).toFixed(2)} KB`;
+	} else {
+		return `${bytes}`;
+	}
 };

@@ -7,6 +7,7 @@ export default function FormInput({
 	className,
 	inputClassName,
 	required = true,
+	readOnly,
 }) {
 	return (
 		<Form.Item
@@ -19,7 +20,7 @@ export default function FormInput({
 			name={inputName}
 			className={className}
 			label={label}>
-			<Input className={inputClassName} placeholder={placeholder} />
+			<Input readOnly={readOnly} className={inputClassName} placeholder={placeholder} />
 		</Form.Item>
 	);
 }

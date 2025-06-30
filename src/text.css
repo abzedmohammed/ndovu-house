@@ -1,16 +1,87 @@
-/* OTHERS */
-
-.logo_hash{
-    font-size: 3rem;
-    font-weight: bold;
+.txt_h1 {
+    color: #0E0E0E;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.375rem;
 }
 
-.logo_text{
+.txt_h2 {
+    color: #0E0E0E;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.9375rem;
 }
 
-.logo_sub_text{
-    font-size: .7rem;
-    font-weight: 300;
+.txt_h3 {
+    color: #0E0E0E;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.75rem;
+}
+
+.txt_h4 {
+    color: #0E0E0E;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1rem;
+}
+
+.txt_body_xl {
+    color: #0E0E0E;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+}
+
+.txt_body_lg {
+    color: #0E0E0E;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.txt_body {
+    color: #0E0E0E;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+.txt_body_sm {
+    color: #0E0E0E;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+.txt_body_xs {
+    color: #0E0E0E;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.875rem;
+}
+
+.txt_body_capt {
+    color: #0E0E0E;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem;
+}
+
+.txt_label_xs {
+    color: #0E0E0E;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.875rem;
 }

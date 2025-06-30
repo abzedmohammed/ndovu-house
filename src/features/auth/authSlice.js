@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
 	authProcessing: false,
 	isActive: false,
-	token: null,
 	user: null,
 	userId: null,
 };
@@ -16,12 +15,9 @@ export const authSlice = createSlice({
 			state.userId = action.payload;
 		},
 		handleAuth: (state, action) => {
-			const { user, token } = action.payload;
-
-			state.user = user;
-			state.token = token;
-			state.userId = null;
+			state.user = action.payload;
 			state.isActive = true;
+			state.userId = null;
 		},
 		handleLogout: () => initialState,
 	},

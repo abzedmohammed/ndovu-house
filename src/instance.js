@@ -8,19 +8,10 @@ const axiosInstance = axios.create({
 	},
 });
 
-axiosInstance.interceptors.response.use(
-	(response) => {
-		return response;
-	},
-	(error) => {
-		const statusCode = error.response ? error.response.status : null;
-
-		if ([401, 403, 400].includes(statusCode)) {
-			// handleLogout();
-		}
-
-		return Promise.reject(error);
-	}
-);
+axiosInstance.interceptors.request.use((config) => {
+	const token = localStorage.getItem('token');
+	if (token) config.headers.Authorization = `Bearer ${token}`;
+	return config;
+});
 
 export default axiosInstance;

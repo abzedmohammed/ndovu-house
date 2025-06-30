@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 * {
-    font-family: 'Roboto', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 html,
 body {
   height: 100%;
-  background-color: #F9FAFB;
+  background: #F4F3F3 !important;
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif !important;
 }

@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleLogout } from '../features/auth/authSlice';
-import { infoNotification } from '../componets/notifications/toastNotification';
+import { errorNotification } from '../componets/notifications/toastNotification';
 
 
 export default function useAuthCheck() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const { token } = useSelector((state) => state.auth);
-
 	const [isSessionExpired, setIsSessionExpired] = useState(false);
 
 	useEffect(() => {
+		const token = localStorage.getItem('token');
+
 		const checkToken = () => {
 			if (!token) {
 				dispatch(handleLogout());
@@ -33,9 +33,9 @@ export default function useAuthCheck() {
 					setIsSessionExpired(false);
 				}
 			} catch (error) {
-				infoNotification({
+				errorNotification({
 					id: 19,
-					title: error,
+					title: error?.message,
 					message: 'Invalid token. Login to continue',
 				});
 				dispatch(handleLogout());
@@ -47,7 +47,7 @@ export default function useAuthCheck() {
 		const interval = setInterval(checkToken, 60000); 
 
 		return () => clearInterval(interval);
-	}, [navigate, token, dispatch]);
+	}, [navigate, dispatch]);
 
 	return isSessionExpired;
 }

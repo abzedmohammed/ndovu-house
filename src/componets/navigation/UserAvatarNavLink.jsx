@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'antd';
 import { handleLogout } from '../../features/auth/authSlice';
+import { formatPhone } from '../../utils';
+import avatar from '../../assets/img/avatar.png';
 
 export default function UserAvatarNavLink() {
 	const dispatch = useDispatch();
@@ -14,7 +16,6 @@ export default function UserAvatarNavLink() {
 				<Link
 					to='/dashboard/profile'
 					className='fx_item_center gap-[.62rem]'>
-					<img src={"profile"} alt='profile icon' />
 					<span className='avatar_dropdown_text'>Profile</span>
 				</Link>
 			),
@@ -24,9 +25,11 @@ export default function UserAvatarNavLink() {
 			label: (
 				<div
 					type='button'
-					onClick={() => dispatch(handleLogout())}
+					onClick={() => {
+						localStorage.removeItem('token');
+						dispatch(handleLogout())
+					}}
 					className='fx_item_center gap-[.62rem] pointer'>
-					<img src={"logout"} alt='logout icon' />
 					<span className='avatar_dropdown_text'>Log out</span>
 				</div>
 			),
@@ -52,18 +55,16 @@ export default function UserAvatarNavLink() {
 				<div className='fx_item_center gap-[.75rem]'>
 					<div className='relative'>
 						<img
-							className='w-10 h-10 rounded-full'
-							src={"avatar"}
+							className='w-14 h-14 rounded-full'
+							src={avatar}
 							alt='avatar'
 						/>
 						<span className='bottom-0 left-0 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full'></span>
 					</div>
 					<div className='fx_col'>
-						<span className='avatar_text'>
-							{user?.usrFirstname} {user?.usrLastname[0]}
-						</span>
+						<span className='avatar_text'>{user?.email}</span>
 						<span className='avatar_sub_text'>
-							{user?.usrProfession}
+							{formatPhone(user?.phone)}
 						</span>
 					</div>
 				</div>

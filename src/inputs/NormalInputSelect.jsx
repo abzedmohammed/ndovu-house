@@ -1,10 +1,10 @@
 import { Select, Spin } from 'antd';
-import { fatArrowDownSvg } from '../componets/svgs';
+import { selectArrowSvg } from '../svgs';
 
 export default function NormalInputSelect({
 	label,
 	value,
-	suffixIcon = fatArrowDownSvg,
+	suffixIcon = selectArrowSvg,
 	inputName,
 	placeholder,
 	inputClassName,

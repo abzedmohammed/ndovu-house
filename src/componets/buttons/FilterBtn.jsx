@@ -1,7 +1,7 @@
 import { Dropdown } from 'antd';
 import filter from '../../assets/svg/filter.svg';
 
-export default function Filterbtn({ className='filter_btn' }) {
+export default function FilterBtn({ className='filter_btn' }) {
 	const handleMenuClick = (e) => {
 		console.log('click', e);
 	};
