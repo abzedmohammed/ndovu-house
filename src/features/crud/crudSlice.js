@@ -17,21 +17,6 @@ export const save = createAsyncThunk('crudSlice/save', async (data) => {
 	return res;
 });
 
-export const saveFile = createAsyncThunk('crudSlice/saveFile', async (file) => {
-	const formData = new FormData();
-	formData.append('file', file);
-
-	const res = await axiosInstance
-		.post(`${url}/files/upload`, formData, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		})
-		.then((res) => res.data);
-
-	return res;
-});
-
 export const uploadFile = createAsyncThunk('crudSlice/uploadFile', async (data) => {
 	let saveUrl = data.saveUrl;
 	const formData = new FormData();
@@ -90,16 +75,6 @@ export const crudSlice = createSlice({
 				state.isProcessing = false;
 			})
 			.addCase(uploadFile.rejected, (state) => {
-				state.isProcessing = false;
-			})
-
-			.addCase(saveFile.pending, (state) => {
-				state.isProcessing = true;
-			})
-			.addCase(saveFile.fulfilled, (state) => {
-				state.isProcessing = false;
-			})
-			.addCase(saveFile.rejected, (state) => {
 				state.isProcessing = false;
 			})
 

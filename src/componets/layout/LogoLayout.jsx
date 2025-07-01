@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import MainNavbar from '../componets/navigation/MainNavbar';
-import AutoScrollToTop from '../componets/navigation/AutoScrollToTop';
+import MainNavbar from '../navigation/MainNavbar';
+import AutoScrollToTop from '../navigation/AutoScrollToTop';
 
 export default function LogoLayout() {
 	const token = localStorage.getItem('token');

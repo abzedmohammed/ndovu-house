@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Modal } from 'antd';
-import { handleLogout } from '../../features/auth/authSlice';
+import { logoutStateFn } from '../../features/auth/authSlice';
 
 let isActive = true;
 
@@ -11,7 +11,7 @@ export default function SessionExpiryModal({ open }) {
 
 	function handleSessionExpired() {
 		if (isActive) return;
-		dispatch(handleLogout());
+		dispatch(logoutStateFn());
 		navigate('/auth/login');
 	}
 

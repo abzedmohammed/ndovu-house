@@ -1,17 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-	activePageTitle: '',
-};
+const initialState = {};
 
 export const globalSlice = createSlice({
 	name: 'global',
 	initialState,
-	reducers: {
-		handleActivePageTitle: (state, action) => {
-			state.activePageTitle = action.payload;
-		},
-	},
+	reducers: {},
 
 	extraReducers: (builder) => {
 		builder;
@@ -20,4 +14,4 @@ export const globalSlice = createSlice({
 
 export default globalSlice.reducer;
 
-export const { handleActivePageTitle } = globalSlice.actions;
+// export const {} = globalSlice.actions;

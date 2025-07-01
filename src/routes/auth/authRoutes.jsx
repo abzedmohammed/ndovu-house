@@ -2,7 +2,7 @@ import { ErrorPage } from '../../pages';
 import AuthAccountVerification from '../../pages/auth/AuthAccountVerification';
 import Login from '../../pages/auth/Login';
 import RegisterOptions from '../../pages/auth/RegisterOptions';
-import { HomeLayoutAuth, LogoLayout } from '../../layout/index';
+import { HomeLayoutAuth, LogoLayout } from '../../componets/layout';
 
 export const authRoutes = [
 	{

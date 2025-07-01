@@ -1,19 +1,15 @@
-import { Link } from 'react-router-dom';
-import GoBackBtn from '../../componets/buttons/GoBackBtn';
-import AntdForm from '../../componets/form/AntdForm';
-import FormInputCheckbox from '../../inputs/FormInputCheckbox';
-import AuthHeader from '../../pages_components/auth/AuthHeader';
-import { Form } from 'antd';
-import PrimaryBtn from '../../componets/buttons/PrimaryBtn';
-import { useDynamicMutation } from '../../custom_hooks/useDynamicMutation';
-import {
-	accountResendOtp,
-	accountVerification,
-} from '../../loaders/auth/authActions';
-import OTPInput from '../../inputs/OTPInput';
-import { useEffect, useState } from 'react';
-import TextDynamic from '../../componets/typrography/TextDynamic';
-import { successNotification } from '../../componets/notifications/toastNotification';
+import { Form } from "antd";
+import { useEffect, useState } from "react";
+import { useDynamicMutation } from "../../hooks/useDynamicMutation";
+import { accountResendOtp, accountVerification } from "../../actions/auth/authActions";
+import { successNotification } from "../../componets/notifications/toastNotification";
+import GoBackBtn from "../../componets/buttons/GoBackBtn";
+import AuthHeader from "../../pages_components/auth/AuthHeader";
+import AntdForm from "../../componets/form/AntdForm";
+import OTPInput from "../../componets/inputs/OTPInput";
+import TextDynamic from "../../componets/typrography/TextDynamic";
+import PrimaryBtn from "../../componets/buttons/PrimaryBtn";
+
 
 export default function AuthAccountVerification() {
 	const [form] = Form.useForm();

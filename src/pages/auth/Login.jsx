@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
-import GoBackBtn from '../../componets/buttons/GoBackBtn';
-import AntdForm from '../../componets/form/AntdForm';
-import FormInput from '../../inputs/FormInput';
-import FormInputCheckbox from '../../inputs/FormInputCheckbox';
-import FormInputPasswordPlain from '../../inputs/FormInputPasswordPlain';
-import AuthHeader from '../../pages_components/auth/AuthHeader';
-import { Form } from 'antd';
-import PrimaryBtn from '../../componets/buttons/PrimaryBtn';
-import { useDynamicMutation } from '../../custom_hooks/useDynamicMutation';
-import { loginAction } from '../../loaders/auth/authActions';
+import { Link } from "react-router-dom";
+import { useDynamicMutation } from "../../hooks/useDynamicMutation";
+import { loginAction } from "../../actions/auth/authActions";
+import GoBackBtn from "../../componets/buttons/GoBackBtn";
+import AuthHeader from "../../pages_components/auth/AuthHeader";
+import AntdForm from "../../componets/form/AntdForm";
+import PrimaryBtn from "../../componets/buttons/PrimaryBtn";
+import FormInput from "../../componets/inputs/FormInput";
+import FormInputPasswordPlain from "../../componets/inputs/FormInputPasswordPlain";
+import FormInputCheckbox from "../../componets/inputs/FormInputCheckbox";
+import { Form } from "antd";
+
 
 export default function Login() {
 	const [form] = Form.useForm();

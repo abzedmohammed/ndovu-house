@@ -1,5 +1,5 @@
 import { ErrorPage } from '../../pages';
-import { MainLayout } from '../../layout/index';
+import { MainLayout } from  '../../componets/layout';
 import ProtectedRoute from '../../ProtectedRoute';
 import AdminDashboard from '../../pages/admin/AdminDashboard';
 import { AdminUserEdit } from '../../pages/admin';

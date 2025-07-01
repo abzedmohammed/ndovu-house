@@ -1,5 +1,24 @@
+import { useRouteError } from 'react-router-dom';
+import ErrorPage404 from './ErrorPage404';
+import SystemErrorPage from './SystemErrorPage';
+import HomeLayout from '../componets/layout/HomeLayout';
+
 export default function ErrorPage() {
-  return (
-    <div>ErrorPage</div>
-  )
+	const error = useRouteError();
+
+	if (error.status === 404) {
+		return (
+			<>
+				<HomeLayout />
+				<ErrorPage404 />
+			</>
+		);
+	}
+
+	return (
+		<>
+			<HomeLayout />
+			<SystemErrorPage />
+		</>
+	);
 }

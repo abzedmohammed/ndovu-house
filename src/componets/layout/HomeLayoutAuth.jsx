@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import MainNavbar from '../componets/navigation/MainNavbar';
-import MainNavLinks from '../componets/navigation/MainNavLinks';
-import AutoScrollToTop from '../componets/navigation/AutoScrollToTop';
+import MainNavbar from '../navigation/MainNavbar';
+import MainNavLinks from '../navigation/NavLinks';
+import AutoScrollToTop from '../navigation/AutoScrollToTop';
 
 export default function HomeLayoutAuth() {
 	const { isActive } = useSelector((state) => state.auth);

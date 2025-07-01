@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { addUserSvg } from '../../svgs';
 
-export default function MainNavLinks() {
+export default function NavLinks() {
 	return (
 		<div className='fx_center flex-wrap gap-[.94rem]'>
 			<Link

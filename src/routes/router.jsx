@@ -1,5 +1,5 @@
 import { createHashRouter, redirect } from 'react-router-dom';
-import { HomeLayout } from '../layout';
+import { HomeLayout } from '../componets/layout';
 import { Components, ErrorPage } from '../pages';
 import { authRoutes } from './auth/authRoutes';
 import { adminRoutes } from './auth/adminRoutes';

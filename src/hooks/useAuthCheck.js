@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import { useDispatch } from 'react-redux';
-import { handleLogout } from '../features/auth/authSlice';
+import { logoutStateFn } from '../features/auth/authSlice';
 import { errorNotification } from '../componets/notifications/toastNotification';
 
 
@@ -17,7 +17,7 @@ export default function useAuthCheck() {
 
 		const checkToken = () => {
 			if (!token) {
-				dispatch(handleLogout());
+				dispatch(logoutStateFn());
 				navigate('/auth/login');
 				return;
 			}
@@ -38,7 +38,7 @@ export default function useAuthCheck() {
 					title: error?.message,
 					message: 'Invalid token. Login to continue',
 				});
-				dispatch(handleLogout());
+				dispatch(logoutStateFn());
 				navigate('/auth/login');
 			}
 		};

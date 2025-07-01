@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Descriptions } from 'antd';
 import { useParams } from 'react-router-dom';
-import { adminFetchUserById } from '../../loaders/admin/adminLoader';
+import { adminFetchUserById } from '../../actions/admin/adminActions';
 
 export default function AdminUserEdit() {
 	const { id } = useParams();
@@ -20,7 +20,7 @@ export default function AdminUserEdit() {
 	if (error) return <div>Error: {error.message}</div>;
     if (!user) return <div>User not found</div>;
     
-   const userData = user.data?.data?.result || []; 
+   const userData = user?.data?.data?.result || {}; 
     
 
 	const items = [

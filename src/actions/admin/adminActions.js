@@ -13,10 +13,9 @@ export const adminFetchUserById = {
 	},
 };
 
-export const adminDeleteUser = {
+export const adminDeleteUserById = {
     queryKey: (id) => ['admin-delete-user', id],
-    queryFn: async ({ queryKey }) => {
-        const [, id] = queryKey;
+    mutationFn: async (id) => {
         return await axiosInstance.delete(`/user/${id}`);
     },
 };

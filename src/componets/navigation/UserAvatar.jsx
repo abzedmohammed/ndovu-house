@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'antd';
-import { handleLogout } from '../../features/auth/authSlice';
+import { logoutStateFn } from '../../features/auth/authSlice';
 import { formatPhone } from '../../utils';
 import avatar from '../../assets/img/avatar.png';
 
-export default function UserAvatarNavLink() {
+export default function UserAvatar() {
 	const dispatch = useDispatch();
 
 	const { user } = useSelector((state) => state.auth);
@@ -27,7 +27,7 @@ export default function UserAvatarNavLink() {
 					type='button'
 					onClick={() => {
 						localStorage.removeItem('token');
-						dispatch(handleLogout())
+						dispatch(logoutStateFn())
 					}}
 					className='fx_item_center gap-[.62rem] pointer'>
 					<span className='avatar_dropdown_text'>Log out</span>

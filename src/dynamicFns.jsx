@@ -200,6 +200,13 @@ export const monitorSTKPush = async (
 	}
 };
 
+export const onError = (error) => {
+	errorNotification({
+		id: 2,
+		message: error?.message,
+	});
+};
+
 export const quillModules = {
 	toolbar: [
 		[{ size: ['small', false, 'large', 'huge'] }],

@@ -27,7 +27,7 @@ export default function useFetch(url, dependency) {
 
 				if (!res.ok) {
 					if ([401, 403, 400].includes(res.status)) {
-						// handleLogout()
+						// logoutStateFn()
 					}
 					setIsError('Request failed');
 					setIsLoading(false);

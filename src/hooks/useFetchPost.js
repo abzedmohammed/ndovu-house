@@ -30,7 +30,7 @@ export default function useFetchPost(url, dependency, body) {
 
 				if (!res.ok) {
 					if ([401, 403, 400].includes(res.status)) {
-						// handleLogout()
+						// logoutStateFn()
 					}
 					setIsError('Request failed');
 					setIsLoading(false);

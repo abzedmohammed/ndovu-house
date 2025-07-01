@@ -1,7 +1,6 @@
 import GoBackBtn from '../componets/buttons/GoBackBtn';
 import PrimaryBtn from '../componets/buttons/PrimaryBtn';
 import SecondaryBtn from '../componets/buttons/SecondaryBtn';
-import PageHeaderTitle from '../componets/navigation/PageHeaderTitle';
 import TextDynamic from '../componets/typrography/TextDynamic';
 import { addUserSvg } from '../svgs';
 
@@ -33,29 +32,7 @@ export default function Components() {
 			<TextDynamic text={'Text body_xs'} className={'txt_body_xs'} />
 			<TextDynamic text={'Text body_capt'} className={'txt_body_capt'} />
 
-			{/* PAGE HEADER */}
-			<PageHeaderTitle
-				showIcon
-				showButton
-				header={
-					<TextDynamic
-						text={'Dashboard'}
-						className={'txt_h2 !text-[#002777]'}
-						tagName='h2'
-					/>
-				}
-				body={
-					<TextDynamic
-						text={
-							'Welcome to the Recognition of Prior Learning Portal'
-						}
-						className={'txt_body_lg !text-[#949DA5]'}
-					/>
-				}
-				button={
-					<PrimaryBtn showIcon={false} text={'Button'} icon={false} />
-				}
-			/>
+			{/* HTML */}
 
 			<>
 				<header>…site title/nav…</header>

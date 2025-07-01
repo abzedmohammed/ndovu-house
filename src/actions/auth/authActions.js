@@ -1,7 +1,7 @@
 import { jwtDecode } from 'jwt-decode';
 import { errorNotification } from '../../componets/notifications/toastNotification';
 import axiosInstance from '../../instance';
-import { handleAuth } from '../../features/auth/authSlice';
+import { authStateFn } from '../../features/auth/authSlice';
 
 export const loginAction = {
 	mutationFn: async (data) => await axiosInstance.post('/auth/login', data),
@@ -32,7 +32,7 @@ export const accountVerification = {
 		
 		if (token) {
 			const decode = jwtDecode(token);
-			dispatch(handleAuth(decode));
+			dispatch(authStateFn(decode));
 			navigate('/admin/dashboard');
 		} else {
 			errorNotification({
